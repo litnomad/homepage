@@ -129,13 +129,13 @@ nav > ul {
 .github-icon {
   min-width: 23px;
   min-height: 23px;
-  background-image: url(github.svg);
+  background-image: url(./icons/github.svg);
 }
 
 .external-icon {
   min-width: 23px;
   min-height: 23px;
-  background-image: url(open-in-new.svg);
+  background-image: url(./icons/open-in-new.svg);
 }
 
 .phone-icon {
@@ -144,7 +144,7 @@ nav > ul {
   margin-bottom: -6px;
   min-width: 23px;
   min-height: 23px;
-  background-image: url(phone.svg);
+  background-image: url(./icons/phone.svg);
 }
 
 .email-icon {
@@ -153,7 +153,7 @@ nav > ul {
   margin-bottom: -6px;
   min-width: 23px;
   min-height: 23px;
-  background-image: url(email.svg);
+  background-image: url(./icons/email.svg);
 }
 
 .contact-pic {
