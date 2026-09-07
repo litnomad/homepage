@@ -14,6 +14,12 @@
   }
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 h1 {
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
@@ -55,7 +61,7 @@ header {
   display: flex;
   align-items: center;
   transform: skewY(11deg);
-  padding: 140px 150px 0px;
+  padding: 190px 150px 0px;
 }
 
 .img-container {
@@ -82,7 +88,7 @@ main {
 .cards-wrapper {
   display: grid;
   justify-content: space-between;
-  grid-template-columns: repeat(auto-fit, minmax(50px, 200px));
+  grid-template-columns: repeat(auto-fit, minmax(50px, 300px));
   grid-auto-rows: auto;
   gap: 50px;
   max-width: 100vw;
@@ -109,6 +115,47 @@ main {
   padding: 100px;
 }
 
+.project {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav > ul {
+  display: flex;
+  gap: 10px;
+}
+
+.github-icon {
+  min-width: 23px;
+  min-height: 23px;
+  background-image: url(github.svg);
+}
+
+.external-icon {
+  min-width: 23px;
+  min-height: 23px;
+  background-image: url(open-in-new.svg);
+}
+
+.phone-icon {
+  display: inline-block;
+  margin-right: 8px;
+  margin-bottom: -6px;
+  min-width: 23px;
+  min-height: 23px;
+  background-image: url(phone.svg);
+}
+
+.email-icon {
+  display: inline-block;
+  margin-right: 8px;
+  margin-bottom: -6px;
+  min-width: 23px;
+  min-height: 23px;
+  background-image: url(email.svg);
+}
+
 .contact-pic {
   max-width: 800px;
   max-height: 380px;
@@ -126,9 +173,18 @@ footer {
 }
 
 @media (width <= 600px) {
+  body {
+    font-size: smaller;
+  }
+
   header {
     flex-direction: column;
     padding: 140px 0px 0px;
+  }
+
+  .img-text {
+    text-align: right;
+    margin-right: 5px;
   }
 
   .about > h1 {
@@ -136,7 +192,7 @@ footer {
   }
 
   main {
-    padding: 470px 10px 100px;
+    padding: 380px 10px 100px;
   }
 
   main > * {
@@ -171,16 +227,34 @@ footer {
 }
 
 @media (width > 600px) and (width <= 1000px) {
+  body {
+    font-size: smaller;
+  }
+
   header {
-    padding: 140px 80px 0px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .img-container {
+    float: left;
+    transform: translate(-11px, -5px);
+  }
+
+  .img-text {
+    white-space: nowrap;
+    position: absolute;
+    top: -10px;
+    left: 210px;
   }
 
   .about {
-    max-width: 500px;
+    max-width: 420px;
+    margin-top: 50px;
   }
 
   main {
-    padding: 210px 80px 145px;
+    padding: 250px 80px 145px;
   }
 
   .cards-wrapper {
