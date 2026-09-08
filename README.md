@@ -6,7 +6,7 @@
 
 ## Features
 - Optimized to meet WebAIM standards
-- Semantics for assistive technology
+- Used semantics for assistive technology
 
 > ## Portfolio design
 > ### Desktop<br> <img src="example-1.png" alt="Example 1" width="200px" />
