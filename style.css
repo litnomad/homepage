@@ -2,18 +2,6 @@
   box-sizing: border-box;
 }
 
-:root {
-  --magic-number: 0.09719015;
-  --content-width: 100vw;
-  --skew-padding: calc(var(--content-width) * var(--magic-number));
-}
-
-@media screen and (max-width: 1024px) {
-  :root {
-    --content-width: 1024px;
-  }
-}
-
 ul {
   list-style-type: none;
   margin: 0;
@@ -27,17 +15,19 @@ h1 {
   font-style: normal;
 }
 
+html {
+  overflow-x: clip;
+}
+
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
   font-weight: 100;
   font-style: normal;
   font-variation-settings: "wdth" 100;
   margin: 0;
-  width: 100vw;
+  width: 100%;
+  min-height: 100vh;
 }
 
 .profile-pic {
@@ -47,21 +37,23 @@ body {
   box-shadow: 5px 5px 10px rgb(97 95 95 / 0.6);
 }
 
-.diagonal-box {
+header::before {
+  content: "";
+  position: absolute;
+  top: -140px;
+  left: 0;
+  width: 100vw;
+  height: 400px;
   background-color: #3cadcf;
   transform: skewY(-11deg);
   transform-origin: bottom;
   box-shadow: 5px 5px 10px rgb(97 95 95 / 0.6);
-  width: 100vw;
-  height: 400px;
-  margin-top: -140px;
 }
 
 header {
   display: flex;
   align-items: center;
-  transform: skewY(11deg);
-  padding: 190px 150px 0px;
+  padding: 80px 150px 0px;
 }
 
 .img-container {
@@ -76,13 +68,15 @@ header {
 }
 
 .about {
+  position: relative;
   background-color: #ffffff;
   box-shadow: 5px 5px 10px rgb(97 95 95 / 0.6);
   padding: 10px;
 }
 
 main {
-  padding: 210px 150px 145px;
+  position: relative;
+  padding: 150px 150px 145px;
 }
 
 .cards-wrapper {
@@ -91,7 +85,7 @@ main {
   grid-template-columns: repeat(auto-fit, minmax(50px, 300px));
   grid-auto-rows: auto;
   gap: 50px;
-  max-width: 100vw;
+  max-width: 100%;
 }
 
 .card {
@@ -172,14 +166,13 @@ footer {
   padding: 0px 150px 0px;
 }
 
-@media (width <= 600px) {
-  body {
-    font-size: smaller;
-  }
+/* mobile */
 
+@media (width <= 600px) {
   header {
     flex-direction: column;
-    padding: 140px 0px 0px;
+    padding: 50px 0px 0px;
+    gap: 40px;
   }
 
   .img-text {
@@ -192,10 +185,10 @@ footer {
   }
 
   main {
-    padding: 380px 10px 100px;
+    padding: 50px 10px 100px;
   }
 
-  main > * {
+  main * {
     text-align: center;
   }
 
@@ -219,12 +212,14 @@ footer {
 
   .contact-pic {
     display: block;
-    width: 100vw;
+    width: 100%;
     height: auto;
     object-fit: cover;
     padding: 0px;
   }
 }
+
+/* tablet */
 
 @media (width > 600px) and (width <= 1000px) {
   body {
@@ -239,6 +234,7 @@ footer {
   .img-container {
     float: left;
     transform: translate(-11px, -5px);
+    z-index: 1;
   }
 
   .img-text {
@@ -254,7 +250,7 @@ footer {
   }
 
   main {
-    padding: 250px 80px 145px;
+    padding: 80px 80px 145px;
   }
 
   .cards-wrapper {
